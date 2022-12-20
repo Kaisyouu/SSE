@@ -10,6 +10,8 @@ TOP交易操控终端通过读取`Common/config/`目录下的`*.cfg`文件，在
 
 考虑到以上问题，拟开发一个小工具，自动化地收集各系统配置文件中的依赖关系，并按照指令的启动时间顺序生成一张图，供相关人员参考。
 
+
+
 #### 1 开发环境
 
 ##### 1.1 Graphviz
@@ -19,4 +21,87 @@ TOP交易操控终端通过读取`Common/config/`目录下的`*.cfg`文件，在
 ```shell
 brew install graphviz
 ```
+
+##### 1.2 Environment
+
+* macOS Monterey v12.6
+
+* Python 3.8.3
+* PyCharm 2021.3.2 (Community Edition)
+
+* graphviz
+
+```shell
+pip install graphviz
+```
+
+> Name: graphviz
+>
+> Version: 0.20.1
+>
+> Summary: Simple Python interface for Graphviz
+>
+> Home-page: https://github.com/xflr6/graphviz
+>
+> Author: Sebastian Bank
+>
+> Author-email: sebastian.bank@uni-leipzig.de
+>
+> License: MIT
+>
+> Location: /Users/kaisyouu/anaconda3/lib/python3.8/site-packages
+>
+> Requires: 
+>
+> Required-by: 
+
+
+
+#### 2 设计思路
+
+##### 2.1 预期效果
+
+![test.gv](README.assets/test.gv.png)
+
+如上图，预期将所有系统配置的指令按照上图形式展现。
+
+##### 2.2 可视化原理
+
+经实践，通过python编写代码，可以调用graphviz工具生成.gv格式的dot脚本，再由此生成可视化的图片。
+
+Python代码如下（test.py）
+
+```python
+from graphviz import Digraph
+
+dot = Digraph('Test')
+dot.node("1", "Life's too short")
+dot.node("2", "I learn Python")
+dot.edge('1', '2')
+
+dot.view()
+```
+
+生成的dot脚本（Test.gv）
+
+```
+digraph Test {
+	1 [label="Life's too short"]
+	2 [label="I learn Python"]
+	1 -> 2
+}
+```
+
+生成的图片（Test.gv.pdf）
+
+<img src="README.assets/image-20221220145040832.png" alt="image-20221220145040832" style="zoom: 25%;" />
+
+##### 2.3 数据结构
+
+了解graphviz的原理之后，计划通过python程序读取配置文件，并将配置中每一个CMD指令构建为一个图节点，每个图节点具有以下属性：
+
+1. 所属系统
+2. 指令名称
+3. 启动时间
+4. 依赖指令
 
