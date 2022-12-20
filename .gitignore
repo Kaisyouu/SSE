@@ -1,1 +1,4 @@
 .DS_Store
+./projects/DrawTOP/*.gv
+./projects/DrawTOP/*.pdf
+./projects/DrawTOP/data/*
