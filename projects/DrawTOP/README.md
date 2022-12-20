@@ -105,3 +105,25 @@ digraph Test {
 3. 启动时间
 4. 依赖指令
 
+已知依赖：
+
+1. 每个系统名称不同，但指令名称有可能相同
+2. 每条指令的依赖可能为多个
+
+根据以上约束，单个节点的数据结构如下：
+
+```python
+class ListNode():
+    def __init__(self, cmd="", time="", prev=None):
+        self.cmd = cmd		// 所属系统:指令
+        self.time = time	// HH:MM:SS
+        self.prev = prev	// list of cmd
+
+```
+
+采用所属系统和指令字符串拼接组成cmd，可以保证不重复，采用字典（哈希）来保存节点：
+
+```python
+dict[cmd]=Listnode
+```
+
