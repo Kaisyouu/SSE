@@ -7,13 +7,13 @@ class ListNode():
         self.time = time
         self.prev = prev
 
-class Utils():
-    def getAllFileInPath(path):
-        '''
-        input: 文件路径path
-        '''
-        file_list = []
-        files = os.listdir(path)
-        for file in files:
-            file_list.append(os.path.join(path,file))
-        return file_list
+
+def getAllFileInPath(path):
+    '''
+    input: 文件路径path
+    '''
+    file_list = []
+    files = os.listdir(path)
+    for file in files:
+        file_list.append(os.path.join(path,file))
+    return file_list

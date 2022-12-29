@@ -127,3 +127,52 @@ class ListNode():
 dict[cmd]=Listnode
 ```
 
+#### 3 版本设计
+
+##### 3.1 v1.0
+
+1. 数据结构
+
+   1. `Listnode`指令
+
+      ```mermaid
+      classDiagram
+      	class Listnode{
+      		int id
+      		string cmd
+      		string time
+      		string[] prev
+      	}
+      ```
+
+      
+
+   2. `cmd_dict`指令字典
+
+      ```mermaid
+      graph TD;
+      	id-->Listnode
+      ```
+
+   3. `active_node_dict`活跃节点字典
+
+      ```mermaid
+      graph TD;
+      	id-->is_active
+      ```
+
+   4. `id_dict`指令id字典
+
+      ```mermaid
+      graph TD;
+      	cmd-->id
+      ```
+
+      
+
+2. 程序流程
+
+   1. 逐行遍历所有配置文件，找到以CMD开头的行，按照编号加入指令字典，同时维护活跃节点字典和指令id字典
+   2. 再次逐行遍历所有配置文件，找到以DEPEND开头的行，将每条指令的依赖指令id加入该指令的依赖数组中，同时使得被依赖项在活跃节点字典的状态为活跃
+   3. 遍历指令字典中所有指令，画出所有状态为活跃的节点
+   4. 遍历指令字典中所有指令，画出所有依赖边

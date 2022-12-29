@@ -1,12 +1,11 @@
-from utils import Utils
+from utils import getAllFileInPath
 from utils import ListNode
 import re
 from graphviz import Digraph
 
+DATA_PATH = '../data'
 
-DATA_PATH = 'D:\GitHome\SSE\projects\DrawTOP\data'
-
-file_list = Utils.getAllFileInPath(DATA_PATH)
+file_list = getAllFileInPath(DATA_PATH)
 cmd_dict = {}       # id -> ListNode
 active_node_dict = {}
 id_dict = {}        # system:cmd -> id
