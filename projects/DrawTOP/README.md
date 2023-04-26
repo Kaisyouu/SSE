@@ -150,21 +150,21 @@ dict[cmd]=Listnode
    2. `cmd_dict`指令字典
 
       ```mermaid
-      graph TD;
+      graph LR;
       	id-->Listnode
       ```
 
    3. `active_node_dict`活跃节点字典
 
       ```mermaid
-      graph TD;
+      graph LR;
       	id-->is_active
       ```
 
    4. `id_dict`指令id字典
 
       ```mermaid
-      graph TD;
+      graph LR;
       	cmd-->id
       ```
 

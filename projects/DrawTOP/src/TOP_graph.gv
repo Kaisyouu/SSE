@@ -1,100 +1,100 @@
 digraph TOP_graph {
 	1 [label="16:50:00
-EZEIMKT:appstart" shape=box]
+EZEIMKT:appstart" color=green shape=box]
 	2 [label="19:50:00
-EZEIMKT:appstop" shape=box]
+EZEIMKT:appstop" color=red shape=box]
 	3 [label="19:51:00
 EZEIMKT:appbackup" shape=box]
 	10 [label="15:50:00
 CMDXITP:getrefdata" shape=box]
 	11 [label="16:45:00
-CMDXITP:monistart" shape=box]
+CMDXITP:monistart" color=green shape=box]
 	12 [label="16:50:00
-CMDXITP:appstart" shape=box]
+CMDXITP:appstart" color=green shape=box]
 	13 [label="19:50:00
-CMDXITP:appstop" shape=box]
+CMDXITP:appstop" color=red shape=box]
 	14 [label="19:55:00
-CMDXITP:monistop" shape=box]
+CMDXITP:monistop" color=red shape=box]
 	15 [label="20:00:00
 CMDXITP:appbackup" shape=box]
 	16 [label="16:35:00
-ZC001:check" shape=box]
+ZC001:check" color=yellow shape=box]
 	17 [label="16:36:00
-ZC001:start" shape=box]
+ZC001:start" color=green shape=box]
 	18 [label="20:50:00
-ZC001:stop" shape=box]
+ZC001:stop" color=red shape=box]
 	19 [label="20:51:00
 ZC001:backup" shape=box]
 	20 [label="20:52:00
 ZC001:clean" shape=box]
 	30 [label="16:40:00
-RC001:start" shape=box]
+RC001:start" color=green shape=box]
 	31 [label="16:40:01
 RC001:pretrd_load" shape=box]
 	32 [label="19:50:00
-RC001:stop" shape=box]
+RC001:stop" color=red shape=box]
 	33 [label="19:50:01
 RC001:backup_all" shape=box]
 	34 [label="19:50:02
 RC001:clean" shape=box]
 	35 [label="19:50:03
-RC001:health_check" shape=box]
+RC001:health_check" color=yellow shape=box]
 	36 [label="20:35:00
 RC001:switch_trddate" shape=box]
 	37 [label="20:35:01
-RC001:prestart" shape=box]
+RC001:prestart" color=green shape=box]
 	38 [label="20:35:02
 RC001:backup" shape=box]
 	39 [label="MANUAL
-RC001:start_check" color=red shape=invhouse]
+RC001:start_check" color=green shape=invhouse]
 	40 [label="MANUAL
-RC001:batch" color=red shape=invhouse]
+RC001:batch" shape=invhouse]
 	56 [label="16:38:00
-MC001:start_check" shape=box]
+MC001:start_check" color=green shape=box]
 	57 [label="16:40:00
-MC001:start" shape=box]
+MC001:start" color=green shape=box]
 	58 [label="19:40:00
 MC001:batch" shape=box]
 	59 [label="19:50:00
-MC001:stop" shape=box]
+MC001:stop" color=red shape=box]
 	60 [label="19:50:01
 MC001:backup_all" shape=box]
 	61 [label="19:50:02
 MC001:clean" shape=box]
 	62 [label="19:50:03
-MC001:health_check" shape=box]
+MC001:health_check" color=yellow shape=box]
 	63 [label="20:35:00
 MC001:switch_trddate" shape=box]
 	64 [label="20:35:01
-MC001:prestart" shape=box]
+MC001:prestart" color=green shape=box]
 	65 [label="20:35:02
 MC001:backup" shape=box]
 	80 [label="16:38:00
-LC001:start_check" shape=box]
+LC001:start_check" color=green shape=box]
 	81 [label="16:40:00
-LC001:start" shape=box]
+LC001:start" color=green shape=box]
 	82 [label="19:40:00
 LC001:batch" shape=box]
 	83 [label="19:50:00
-LC001:stop" shape=box]
+LC001:stop" color=red shape=box]
 	84 [label="19:50:01
 LC001:backup_all" shape=box]
 	85 [label="19:50:02
 LC001:clean" shape=box]
 	86 [label="19:50:03
-LC001:health_check" shape=box]
+LC001:health_check" color=yellow shape=box]
 	87 [label="20:35:00
 LC001:switch_trddate" shape=box]
 	88 [label="20:35:01
-LC001:prestart" shape=box]
+LC001:prestart" color=green shape=box]
 	89 [label="20:35:02
 LC001:backup" shape=box]
 	104 [label="16:30:00
-CS001:check" shape=box]
+CS001:check" color=yellow shape=box]
 	105 [label="16:45:00
-CS001:start" shape=box]
+CS001:start" color=green shape=box]
 	106 [label="19:45:45
-CS001:stop" shape=box]
+CS001:stop" color=red shape=box]
 	107 [label="19:50:00
 CS001:backup" shape=box]
 	108 [label="20:30:00
@@ -102,13 +102,13 @@ CS001:clean" shape=box]
 	109 [label="20:30:00
 CS001:health" shape=box]
 	116 [label="16:55:00
-DRMM:START_drmm_svc" shape=box]
+DRMM:START_drmm_svc" color=green shape=box]
 	117 [label="19:40:00
-DRMM:STOP_drmm_svc" shape=box]
+DRMM:STOP_drmm_svc" color=red shape=box]
 	118 [label="16:55:00
-DRMM:START_drmm_cmp" shape=box]
+DRMM:START_drmm_cmp" color=green shape=box]
 	119 [label="19:40:00
-DRMM:STOP_drmm_cmp" shape=box]
+DRMM:STOP_drmm_cmp" color=red shape=box]
 	121 [label="19:42:00
 DRMM:BACKUP_drmm" shape=box]
 	122 [label="19:45:00
@@ -116,23 +116,23 @@ DRMM:CLEAN_drmm" shape=box]
 	123 [label="19:46:00
 DRMM:UPDATE_drmm" shape=box]
 	124 [label="16:45:00
-DRMM:START_tdss" shape=box]
+DRMM:START_tdss" color=green shape=box]
 	125 [label="19:41:00
-DRMM:STOP_tdss" shape=box]
+DRMM:STOP_tdss" color=red shape=box]
 	126 [label="16:40:00
-DRMM:START_ocgm" shape=box]
+DRMM:START_ocgm" color=green shape=box]
 	127 [label="19:50:00
-DRMM:STOP_ocgm" shape=box]
+DRMM:STOP_ocgm" color=red shape=box]
 	133 [label="15:50:00
 DATAXITP:getrefdata" shape=box]
 	134 [label="16:45:00
-DATAXITP:monistart" shape=box]
+DATAXITP:monistart" color=green shape=box]
 	135 [label="16:50:00
-DATAXITP:appstart" shape=box]
+DATAXITP:appstart" color=green shape=box]
 	136 [label="20:30:00
-DATAXITP:appstop" shape=box]
+DATAXITP:appstop" color=red shape=box]
 	137 [label="20:35:00
-DATAXITP:monistop" shape=box]
+DATAXITP:monistop" color=red shape=box]
 	138 [label="20:40:00
 DATAXITP:appbackup" shape=box]
 	30 -> 1

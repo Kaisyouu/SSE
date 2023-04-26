@@ -3,7 +3,7 @@ from utils import ListNode
 import re
 from graphviz import Digraph
 
-DATA_PATH = '../data'
+DATA_PATH = '../data/input'
 
 file_list = getAllFileInPath(DATA_PATH)
 cmd_dict = {}       # id -> ListNode
@@ -49,11 +49,27 @@ for cmd_id in cmd_dict.keys():
     depend_id_list = cmd_dict[cmd_id].prev
     time = cmd_dict[cmd_id].time
     if active_node_dict[cmd_id]:
-        if time != '-':
-            dot.node(str(cmd_id), time + '\n' + cmd, shape='box')
+        if re.search("start", cmd, re.IGNORECASE):
+            print("start")
+            if time != '-':
+                dot.node(str(cmd_id), time + '\n' + cmd, shape='box', color='green')
+            else:
+                dot.node(str(cmd_id), 'MANUAL' + '\n' + cmd, shape='invhouse', color='green')
+        elif re.search("stop", cmd, re.IGNORECASE):
+            if time != '-':
+                dot.node(str(cmd_id), time + '\n' + cmd, shape='box', color='red')
+            else:
+                dot.node(str(cmd_id), 'MANUAL' + '\n' + cmd, shape='invhouse', color='red')
+        elif re.search("check", cmd, re.IGNORECASE):
+            if time != '-':
+                dot.node(str(cmd_id), time + '\n' + cmd, shape='box', color='yellow')
+            else:
+                dot.node(str(cmd_id), 'MANUAL' + '\n' + cmd, shape='invhouse', color='yellow')
         else:
-            dot.node(str(cmd_id), 'MANUAL' + '\n' + cmd, shape='invhouse', color='red')
-    
+            if time != '-':
+                dot.node(str(cmd_id), time + '\n' + cmd, shape='box')
+            else:
+                dot.node(str(cmd_id), 'MANUAL' + '\n' + cmd, shape='invhouse')
 # draw edges
 for cmd_id in cmd_dict.keys():
     depend_id_list = cmd_dict[cmd_id].prev
